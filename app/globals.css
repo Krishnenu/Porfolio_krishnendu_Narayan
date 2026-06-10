@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  /* Light Theme Variables */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #e2e8f0;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-hover: #f1f5f9;
+  --accent-purple: #8b5cf6;
+  --accent-purple-glow: rgba(139, 92, 246, 0.15);
+  --accent-indigo: #6366f1;
+  --text-muted: #64748b;
+  --stat-exp-bg: #e0f2fe;
+  --stat-exp-text: #0369a1;
+  --stat-proj-bg: #dcfce7;
+  --stat-proj-text: #15803d;
+  --stat-hack-bg: #fef9c3;
+  --stat-hack-text: #a16207;
+  --stat-git-bg: #f3e8ff;
+  --stat-git-text: #7e22ce;
+}
+
+.dark {
+  /* Premium Dark Theme Variables (matching screenshot) */
+  --background: #080911;
+  --foreground: #f8fafc;
+  --sidebar-bg: #0b0c16;
+  --sidebar-border: #131525;
+  --card-bg: #111324;
+  --card-border: #1e2035;
+  --card-hover: #171a32;
+  --accent-purple: #9d4edd;
+  --accent-purple-glow: rgba(157, 78, 221, 0.25);
+  --accent-indigo: #4f46e5;
+  --text-muted: #94a3b8;
+  --stat-exp-bg: rgba(30, 27, 75, 0.8);
+  --stat-exp-text: #c084fc;
+  --stat-proj-bg: rgba(6, 78, 59, 0.4);
+  --stat-proj-text: #34d399;
+  --stat-hack-bg: rgba(120, 53, 4, 0.4);
+  --stat-hack-text: #fbbf24;
+  --stat-git-bg: rgba(88, 28, 135, 0.4);
+  --stat-git-text: #c084fc;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sidebar: var(--sidebar-bg);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-card: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-card-hover: var(--card-hover);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-indigo: var(--accent-indigo);
+  --color-text-muted: var(--text-muted);
+  
+  --color-stat-exp-bg: var(--stat-exp-bg);
+  --color-stat-exp-text: var(--stat-exp-text);
+  --color-stat-proj-bg: var(--stat-proj-bg);
+  --color-stat-proj-text: var(--stat-proj-text);
+  --color-stat-hack-bg: var(--stat-hack-bg);
+  --color-stat-hack-text: var(--stat-hack-text);
+  --color-stat-git-bg: var(--stat-git-bg);
+  --color-stat-git-text: var(--stat-git-text);
+  
+  --font-sans: var(--font-geist-sans), Inter, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-purple);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glowing background animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+.glow-bg {
+  animation: pulseGlow 8s infinite ease-in-out;
+}
