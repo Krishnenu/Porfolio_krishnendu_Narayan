@@ -43,7 +43,11 @@ export default function Home() {
             </span>
             Available for opportunities
           </Badge>
-          <Button href="/contact" variant="primary" className="!px-4 !py-1.5 !rounded-xl !text-xs !shadow-sm !shadow-accent-indigo/10">
+          <Button
+            href="/contact"
+            variant="primary"
+            className="!px-4 !py-1.5 !rounded-xl !text-xs !shadow-sm !shadow-accent-indigo/10"
+          >
             Hire Me
             <DynamicIcon name="ArrowUpRight" className="h-3.5 w-3.5" />
           </Button>

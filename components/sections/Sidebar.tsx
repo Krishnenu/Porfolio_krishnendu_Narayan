@@ -14,14 +14,9 @@ export default function Sidebar() {
   const { personal, navigation } = portfolioData;
 
   // Initialize theme from document element class list
-  useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsDarkMode(isDark);
-  }, []);
 
   const handleThemeToggle = (checked: boolean) => {
-    setIsDarkMode(checked);
+    setIsDarkMode(!checked);
     if (checked) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
@@ -81,7 +76,11 @@ export default function Sidebar() {
         {/* Dark Mode Switch */}
         <div className="flex items-center justify-between px-2">
           <span className="text-sm font-medium text-text-muted">Dark Mode</span>
-          <Switch checked={isDarkMode} onChange={handleThemeToggle} ariaLabel="Toggle dark mode" />
+          <Switch
+            checked={!isDarkMode}
+            onChange={handleThemeToggle}
+            ariaLabel="Toggle dark mode"
+          />
         </div>
 
         {/* Download CV */}
