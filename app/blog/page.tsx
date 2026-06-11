@@ -67,7 +67,13 @@ export default function BlogPage() {
               {/* Title & Excerpt */}
               <div className="space-y-2">
                 <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-accent-purple transition-colors duration-200">
-                  <a href={`/blog/${blog.slug}`}>{blog.title}</a>
+                  <a
+                    href={blog.url || `/blog/${blog.slug}`}
+                    target={blog.url ? "_blank" : undefined}
+                    rel={blog.url ? "noopener noreferrer" : undefined}
+                  >
+                    {blog.title}
+                  </a>
                 </h3>
                 <p className="text-sm text-text-muted leading-relaxed">
                   {blog.excerpt}
@@ -90,7 +96,9 @@ export default function BlogPage() {
 
               {/* Read More button */}
               <Button
-                href={`/blog/${blog.slug}`}
+                href={blog.url || `/blog/${blog.slug}`}
+                target={blog.url ? "_blank" : undefined}
+                rel={blog.url ? "noopener noreferrer" : undefined}
                 variant="secondary"
                 className="!px-3 !py-1.5 !rounded-lg !text-xs !shadow-none hover:bg-card-hover font-bold text-accent-purple"
               >

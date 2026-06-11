@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { portfolioData } from "@/data/portfolioData";
 import Button from "@/components/ui/Button";
 import Switch from "@/components/ui/Switch";

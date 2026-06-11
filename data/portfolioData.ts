@@ -66,6 +66,7 @@ export interface BlogItem {
   readTime: string;
   tags: string[];
   slug: string;
+  url?: string;
 }
 
 export interface CertificationItem {
@@ -82,6 +83,7 @@ export interface PortfolioData {
     name: string;
     firstName: string;
     lastName: string;
+    mobile: number;
     role: string;
     tagline: string;
     bio: string;
@@ -105,12 +107,14 @@ export const portfolioData: PortfolioData = {
     name: "Krishnendu Narayan",
     firstName: "Krishnendu",
     lastName: "Narayan",
-    role: "Full Stack Developer",
+    mobile: +918050676058,
+    role: "Senior Frontend Developer",
     tagline:
-      "I build exceptional digital experiences and scalable web applications.",
-    bio: "I build exceptional digital experiences and scalable web applications that solve real world problems.",
-    avatar: "/arjun_mehta.png",
-    cvUrl: "#",
+      "Building scalable, high-performance React applications with modern frontend architecture.",
+    bio: "Frontend Developer with 6+ years of experience in React.js, Next.js, TypeScript, Redux, and Micro Frontend architecture. Specialized in scalable enterprise applications, reusable UI systems, and performance optimization.",
+    avatar:
+      "https://krishnendu-portfolio-site.s3.eu-north-1.amazonaws.com/Screenshot+2026-06-11+040531.jpg",
+    cvUrl: "/Krishnendu_FS_resume.pdf",
     social: {
       github: "https://github.com/krishnenu",
       linkedin: "https://linkedin.com/in/krishnendu-narayan",
@@ -118,6 +122,7 @@ export const portfolioData: PortfolioData = {
       email: "mailto:krishnendu.nryn@gmail.com",
     },
   },
+
   navigation: [
     { label: "Home", path: "/", icon: "Home" },
     { label: "Resume", path: "/resume", icon: "FileText" },
@@ -128,218 +133,222 @@ export const portfolioData: PortfolioData = {
     { label: "Certifications", path: "/certifications", icon: "Award" },
     { label: "Contact", path: "/contact", icon: "Mail" },
   ],
+
   stats: [
     {
-      value: "4+",
+      value: "6+",
       label: "Years",
       sublabel: "Experience",
       icon: "Briefcase",
       colorTheme: "exp",
     },
     {
-      value: "15+",
-      label: "Projects",
-      sublabel: "Completed",
+      value: "10+",
+      label: "Enterprise",
+      sublabel: "Projects",
       icon: "CheckCircle",
       colorTheme: "proj",
     },
     {
-      value: "5",
-      label: "Hackathons",
-      sublabel: "Won",
-      icon: "Star",
+      value: "4",
+      label: "Companies",
+      sublabel: "Worked With",
+      icon: "Building2",
       colorTheme: "hack",
     },
     {
-      value: "Top Rated",
-      label: "on GitHub",
-      sublabel: "",
+      value: "React",
+      label: "Frontend",
+      sublabel: "Specialist",
       icon: "Trophy",
       colorTheme: "git",
     },
   ],
+
   services: [
     {
       id: "srv-1",
       title: "Frontend Development",
       description:
-        "Building responsive and interactive user interfaces with modern technologies.",
+        "Building scalable and responsive enterprise applications using React.js and Next.js.",
       icon: "Code",
     },
     {
       id: "srv-2",
-      title: "Backend Development",
+      title: "UI Architecture",
       description:
-        "Creating robust APIs and backend services with scalable architecture.",
-      icon: "Database",
+        "Designing reusable component systems and Micro Frontend architecture.",
+      icon: "Layout",
     },
     {
       id: "srv-3",
-      title: "Full Stack Solutions",
+      title: "Performance Optimization",
       description:
-        "End-to-end development with complete solutions from idea to deployment.",
-      icon: "Layers",
+        "Optimizing frontend performance using code splitting, lazy loading, and memoization.",
+      icon: "Gauge",
     },
     {
       id: "srv-4",
-      title: "DevOps & Deployment",
+      title: "API Integration",
       description:
-        "CI/CD, cloud deployment and monitoring for production apps.",
+        "Integrating REST and GraphQL APIs into enterprise-grade applications.",
       icon: "Cloud",
     },
   ],
+
   experiences: [
     {
       id: "exp-1",
-      role: "Senior Full Stack Engineer",
-      company: "InnovateTech Solutions",
-      period: "2024 - Present",
+      role: "Technical Specialist",
+      company: "Infovision Labs Pvt Ltd",
+      period: "May 2025 - Apr 2026",
       description: [
-        "Led a team of 4 engineers to design and develop a microservices-based SaaS platform.",
-        "Optimized frontend bundle sizes by 42% and implemented modern state-management configurations.",
-        "Created custom reusable UI library using React, TypeScript, and Tailwind CSS.",
+        "Developed customer enrollment interfaces for Verizon Home Internet plans.",
+        "Built reusable React.js UI components with Redux state management.",
+        "Implemented responsive layouts with HTML5 and CSS3.",
+        "Integrated dynamic comparison and eligibility features.",
+        "Optimized performance using code splitting and rendering improvements.",
       ],
-      tags: ["React", "Next.js", "Node.js", "GraphQL", "TailwindCSS"],
+      tags: ["React.js", "Redux", "JavaScript", "HTML5", "CSS3"],
     },
+
     {
       id: "exp-2",
-      role: "Software Engineer",
-      company: "PixelCraft Agency",
-      period: "2022 - 2024",
+      role: "Senior Software Engineer",
+      company: "Accion Labs",
+      period: "Nov 2023 - Jan 2025",
       description: [
-        "Developed responsive web applications for enterprise clients using React and Next.js.",
-        "Built serverless backend REST APIs using AWS Lambda, API Gateway, and DynamoDB.",
-        "Integrated third-party payment systems and automated testing suites using Cypress.",
+        "Developed scalable UI modules using React.js and TypeScript.",
+        "Built reusable components in Micro Frontend architecture.",
+        "Integrated GraphQL APIs using Apollo Client.",
+        "Improved application maintainability and performance.",
+        "Implemented unit testing using Jest and React Testing Library.",
       ],
-      tags: ["React", "TypeScript", "AWS", "Serverless", "DynamoDB"],
+      tags: [
+        "React.js",
+        "TypeScript",
+        "GraphQL",
+        "Apollo Client",
+        "Micro Frontend",
+      ],
+    },
+
+    {
+      id: "exp-3",
+      role: "Frontend Engineer / Associate Consultant",
+      company: "Capgemini",
+      period: "May 2021 - Sep 2023",
+      description: [
+        "Developed enterprise UI applications using React.js and TypeScript.",
+        "Built checkout and address management modules.",
+        "Integrated REST APIs with frontend applications.",
+        "Migrated legacy codebases to modern React architecture.",
+        "Designed reusable UI components for scalability.",
+      ],
+      tags: ["React.js", "TypeScript", "REST APIs", "Redux"],
+    },
+
+    {
+      id: "exp-4",
+      role: "Software Engineer",
+      company: "Amazon Development Centre",
+      period: "Aug 2019 - May 2021",
+      description: [
+        "Worked on Contract Lifecycle Management systems.",
+        "Designed automation test cases for backend services.",
+        "Improved system reliability through testing frameworks.",
+        "Collaborated on regression and integration testing.",
+      ],
+      tags: ["Automation Testing", "Java", "Backend Validation", "QA"],
     },
   ],
+
   education: [
     {
-      degree: "Bachelor of Technology in Computer Science",
-      school: "Tech Institute of Engineering",
-      period: "2018 - 2022",
+      degree: "PG Diploma (CDAC)",
+      school: "Bangalore",
+      period: "2018",
       details:
-        "Specialized in Software Engineering and Database Systems. Graduated with Honors.",
+        "Advanced training in software development and computer applications.",
+    },
+    {
+      degree: "B.E. Electrical & Electronics Engineering",
+      school: "Engineering College",
+      period: "2013 - 2017",
+      details: "Graduated in Electrical & Electronics Engineering.",
     },
   ],
-  projects: [
-    {
-      id: "proj-1",
-      title: "Crypto Dashboard",
-      description:
-        "A real-time cryptocurrency tracker and portfolio analytics platform featuring detailed charts and historical trends.",
-      image:
-        "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=600&auto=format&fit=crop&q=60",
-      tags: ["React", "ChartJS", "CoinGecko API", "Tailwind CSS"],
-      category: "frontend",
-      demoUrl: "https://crypto-dash-example.com",
-      githubUrl: "https://github.com/krishnendunarayan/crypto-dash",
-    },
-    {
-      id: "proj-2",
-      title: "E-Commerce Microservice",
-      description:
-        "Scalable backend architecture for an e-commerce platform incorporating order processing, catalog, and checkout modules.",
-      image:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=60",
-      tags: ["Node.js", "Express", "MongoDB", "RabbitMQ", "Docker"],
-      category: "backend",
-      demoUrl: "https://api-example.com",
-      githubUrl: "https://github.com/krishnendunarayan/ecommerce-service",
-    },
-    {
-      id: "proj-3",
-      title: "TaskFlow Manager",
-      description:
-        "Collaborative project management dashboard with board layouts, Gantt charts, real-time sync, and notification hub.",
-      image:
-        "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&auto=format&fit=crop&q=60",
-      tags: ["Next.js", "Prisma", "PostgreSQL", "Socket.io", "Tailwind CSS"],
-      category: "fullstack",
-      demoUrl: "https://taskflow-example.com",
-      githubUrl: "https://github.com/krishnendunarayan/taskflow",
-    },
-    {
-      id: "proj-4",
-      title: "Cloud Infrastructure Setup",
-      description:
-        "Infrastructure as Code project provisioning scalable VPC, load balancers, ECS cluster, and RDS databases on AWS.",
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=60",
-      tags: ["Terraform", "AWS", "ECS", "Docker", "GitHub Actions"],
-      category: "devops",
-      demoUrl: undefined,
-      githubUrl: "https://github.com/krishnendunarayan/aws-iac",
-    },
-  ],
+
+  projects: [],
+
   skills: [
     {
       category: "Frontend",
       skills: [
-        { name: "React / Next.js", level: 95 },
+        { name: "React.js", level: 95 },
+        { name: "Next.js", level: 90 },
         { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Redux Toolkit", level: 85 },
+        { name: "JavaScript ES6+", level: 95 },
+        { name: "Redux", level: 90 },
       ],
     },
+
     {
-      category: "Backend",
+      category: "UI / Styling",
       skills: [
-        { name: "Node.js / Express", level: 88 },
-        { name: "REST & GraphQL APIs", level: 85 },
-        { name: "PostgreSQL & MongoDB", level: 82 },
-        { name: "Redis Caching", level: 75 },
+        { name: "Tailwind CSS", level: 90 },
+        { name: "Material UI", level: 85 },
+        { name: "Bootstrap", level: 85 },
+        { name: "Responsive Design", level: 90 },
       ],
     },
+
     {
-      category: "DevOps & Tools",
+      category: "Backend & APIs",
       skills: [
-        { name: "Docker / Containers", level: 80 },
-        { name: "Git & CI/CD", level: 90 },
-        { name: "AWS Cloud", level: 78 },
-        { name: "Linux Administration", level: 75 },
+        { name: "REST APIs", level: 90 },
+        { name: "GraphQL APIs", level: 85 },
+        { name: "MySQL", level: 75 },
+        { name: "Apollo Client", level: 80 },
+      ],
+    },
+
+    {
+      category: "Tools & DevOps",
+      skills: [
+        { name: "Git/GitHub", level: 90 },
+        { name: "Docker", level: 75 },
+        { name: "CI/CD", level: 80 },
+        { name: "Linux", level: 75 },
+        { name: "Azure Cloud", level: 70 },
       ],
     },
   ],
+
   blogs: [
     {
       id: "blog-1",
-      title: "Optimizing Next.js Web Vitals for Production Sites",
+      title:
+        "Caching Basics for System Design: Complete Beginner-Friendly Guide",
       excerpt:
-        "Deep dive into performance patterns including image optimization, font caching, dynamic imports, and static generation mechanisms.",
-      date: "May 12, 2026",
-      readTime: "8 min read",
-      tags: ["Next.js", "Performance", "Web Vitals"],
-      slug: "optimizing-nextjs-web-vitals",
-    },
-    {
-      id: "blog-2",
-      title: "Why We Switched From REST to GraphQL for our Mobile API",
-      excerpt:
-        "The architectural challenges, migration path, and major speedups we observed when shifting our query framework to GraphQL.",
-      date: "April 18, 2026",
+        "A beginner-friendly guide to caching concepts in system design, covering caching strategies (write-through, write-around, write-back), eviction policies, and distributed caching basics.",
+      date: "Jun 11, 2026",
       readTime: "6 min read",
-      tags: ["API", "GraphQL", "Architecture"],
-      slug: "switching-rest-to-graphql",
+      tags: ["System Design", "Caching", "Backend", "Web Development"],
+      slug: "caching-basics-for-system-design",
+      url: "https://medium.com/@krishnendu.nryn/caching-basics-for-system-design-complete-beginner-friendly-guide-4b2afde2dbb5?postPublishedType=repub",
     },
   ],
+
   certifications: [
     {
       id: "cert-1",
-      title: "AWS Certified Solutions Architect – Associate",
-      issuer: "Amazon Web Services",
-      date: "2025",
-      credentialId: "AWS-ASA-12345",
-      verifyUrl: "https://aws.amazon.com/verification",
-    },
-    {
-      id: "cert-2",
-      title: "Certified Kubernetes Administrator (CKA)",
-      issuer: "The Linux Foundation",
-      date: "2025",
-      credentialId: "CKA-7890",
-      verifyUrl: "https://cncf.io/verification",
+      title: "AI Tools Workshop",
+      issuer: "CertX",
+      date: "June 2026",
+      credentialId: "0270772f-3809-4400-b29b-1e1c61cd09971415510",
+      verifyUrl:
+        "https://certx.in/certificate/0270772f-3809-4400-b29b-1e1c61cd09971415510",
     },
   ],
 };

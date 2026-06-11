@@ -8,10 +8,18 @@ import DynamicIcon from "@/components/ui/DynamicIcon";
 
 export default function ContactPage() {
   const { personal } = portfolioData;
-  const [formState, setFormState] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
@@ -30,8 +38,12 @@ export default function ContactPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-card-border/40">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground">Get In Touch</h1>
-          <p className="text-sm text-text-muted mt-1">Let&apos;s discuss how we can work together</p>
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+            Get In Touch
+          </h1>
+          <p className="text-sm text-text-muted mt-1">
+            Let&apos;s discuss how we can work together
+          </p>
         </div>
       </div>
 
@@ -39,7 +51,27 @@ export default function ContactPage() {
         {/* Info Column */}
         <div className="lg:col-span-2 space-y-6">
           <Card className="p-6 space-y-6" hoverable={false}>
-            <h2 className="text-lg font-bold text-foreground">Contact Details</h2>
+            <h2 className="text-lg font-bold text-foreground">
+              Contact Details
+            </h2>
+
+            {/* Contact card */}
+            <div className="flex items-center gap-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                <DynamicIcon name="Phone" className="h-5 w-5" />
+              </div>
+              <div>
+                <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+                  Contact
+                </h3>
+                <a
+                  href={`tel:+${personal.mobile}`}
+                  className="text-sm font-semibold text-foreground hover:text-accent-purple transition-colors"
+                >
+                  +{personal.mobile}
+                </a>
+              </div>
+            </div>
 
             {/* Email card */}
             <div className="flex items-center gap-4">
@@ -47,7 +79,9 @@ export default function ContactPage() {
                 <DynamicIcon name="Mail" className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">Email</h3>
+                <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+                  Email
+                </h3>
                 <a
                   href={personal.social.email}
                   className="text-sm font-semibold text-foreground hover:text-accent-purple transition-colors"
@@ -63,8 +97,12 @@ export default function ContactPage() {
                 <DynamicIcon name="MapPin" className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">Location</h3>
-                <p className="text-sm font-semibold text-foreground">Mumbai, India</p>
+                <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+                  Location
+                </h3>
+                <p className="text-sm font-semibold text-foreground">
+                  Bangalore, India
+                </p>
               </div>
             </div>
 
@@ -74,8 +112,12 @@ export default function ContactPage() {
                 <DynamicIcon name="Clock" className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">Availability</h3>
-                <p className="text-sm font-semibold text-foreground">Open to remote & contract positions</p>
+                <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+                  Availability
+                </h3>
+                <p className="text-sm font-semibold text-foreground">
+                  Open to full time positions
+                </p>
               </div>
             </div>
           </Card>
@@ -85,10 +127,15 @@ export default function ContactPage() {
         <div className="lg:col-span-3">
           <Card className="p-6" hoverable={false}>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <h2 className="text-lg font-bold text-foreground">Send a Message</h2>
+              <h2 className="text-lg font-bold text-foreground">
+                Send a Message
+              </h2>
 
               <div className="space-y-1">
-                <label htmlFor="name" className="text-xs font-semibold text-text-muted">
+                <label
+                  htmlFor="name"
+                  className="text-xs font-semibold text-text-muted"
+                >
                   Your Name
                 </label>
                 <input
@@ -103,7 +150,10 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-1">
-                <label htmlFor="email" className="text-xs font-semibold text-text-muted">
+                <label
+                  htmlFor="email"
+                  className="text-xs font-semibold text-text-muted"
+                >
                   Email Address
                 </label>
                 <input
@@ -118,7 +168,10 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-1">
-                <label htmlFor="message" className="text-xs font-semibold text-text-muted">
+                <label
+                  htmlFor="message"
+                  className="text-xs font-semibold text-text-muted"
+                >
                   Message
                 </label>
                 <textarea
@@ -140,7 +193,10 @@ export default function ContactPage() {
               >
                 {status === "sending" ? (
                   <>
-                    <DynamicIcon name="Loader2" className="h-4 w-4 animate-spin" />
+                    <DynamicIcon
+                      name="Loader2"
+                      className="h-4 w-4 animate-spin"
+                    />
                     Sending Message...
                   </>
                 ) : (

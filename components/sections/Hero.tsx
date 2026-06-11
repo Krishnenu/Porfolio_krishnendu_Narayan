@@ -88,7 +88,9 @@ export default function Hero() {
 
           {/* Social icons row */}
           <div className="flex items-center gap-4 pt-4 border-t border-card-border/40 w-fit">
-            <span className="text-xs font-semibold text-text-muted">Connect with me</span>
+            <span className="text-xs font-semibold text-text-muted">
+              Connect with me
+            </span>
             <div className="flex items-center gap-3">
               <a
                 href={personal.social.github}
@@ -151,8 +153,9 @@ export default function Hero() {
                 alt={personal.name}
                 fill
                 priority
+                unoptimized
                 className="object-cover object-top hover:scale-105 transition-transform duration-500"
-                sizes="(max-w-768px) 100vw, 384px"
+                sizes="(max-width: 768px) 100vw, 384px"
               />
             </div>
           </div>
