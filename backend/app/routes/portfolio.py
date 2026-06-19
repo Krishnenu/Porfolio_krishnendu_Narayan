@@ -24,6 +24,15 @@ def get_resume():
         "role": "Full Stack GenAI Developer"
     }
 
+# @router.post("/resume")
+# def create_resume(payload: ResumeCreateSchema):
+#     global resume_db
+#     resume_db = payload.model_dump()
+
+#     return {
+#         "message": "Resume created successfully",
+#         "data": resume_db
+#     }
 
 @router.get("/experience", response_model=ExperienceSchema)
 def get_experience():
