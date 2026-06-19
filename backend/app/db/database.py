@@ -5,7 +5,7 @@ from urllib.parse import quote_plus
 params = quote_plus(
     "DRIVER={ODBC Driver 17 for SQL Server};"
     "SERVER=(localdb)\\MSSQLLocalDB;"
-    "DATABASE=AuthDb;"
+    "DATABASE=PortfolioDB;"
     "Trusted_Connection=yes;"
 )
 
