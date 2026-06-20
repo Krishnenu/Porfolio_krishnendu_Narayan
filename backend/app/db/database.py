@@ -2,6 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from urllib.parse import quote_plus
 
+
 params = quote_plus(
     "DRIVER={ODBC Driver 17 for SQL Server};"
     "SERVER=(localdb)\\MSSQLLocalDB;"
@@ -23,3 +24,4 @@ SessionLocal = sessionmaker(
 )
 
 Base = declarative_base()
+
