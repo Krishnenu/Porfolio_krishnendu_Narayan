@@ -3,23 +3,23 @@ from sqlalchemy.orm import Session
 from app.schemas.portfolio_schema import PortfolioSchema
 from app.dependencies.database import get_db
 from app.models.models import (
-    Portfolio,
+    Portfolios as Portfolio,
     PersonalInfo,
-    SocialLink,
-    Stat,
-    Service,
-    Experience,
-    ExperienceDescription,
-    ExperienceTag,
+    SocialLinks as SocialLink,
+    Stats as Stat,
+    Services as Service,
+    Experiences as Experience,
+    ExperienceDescriptions as ExperienceDescription,
+    ExperienceTags as ExperienceTag,
     Education,
-    Project,
-    ProjectTag,
-    SkillCategory,
-    Blog,
-    Certification
+    Projects as Project,
+    ProjectTags as ProjectTag,
+    SkillCategories as SkillCategory,
+    Blogs as Blog,
+    Certifications as Certification
 )
 
-router = APIRouter(prefix="/portfolio", tags=["Portfolio"])
+router = APIRouter( tags=["Portfolio"])
 
 
 @router.get("/",response_model=PortfolioSchema)

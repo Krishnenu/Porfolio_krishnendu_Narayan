@@ -9,117 +9,117 @@ class BaseSchema(BaseModel):
 
 class PersonalInfoSchema(BaseSchema):
     id: int
-    name: str
-    first_name: str
-    last_name: str
-    mobile: str
-    role: str
-    tagline: str
-    bio: str
-    avatar_url: str
-    resume_url: str
+    name: Optional[str] = None
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+    mobile: Optional[str] = None
+    role: Optional[str] = None
+    tagline: Optional[str] = None
+    bio: Optional[str] = None
+    avatar_url: Optional[str] = None
+    resume_url: Optional[str] = None
 
 
 class SocialLinkSchema(BaseSchema):
     id: int
-    github_url: str
-    linkedin_url: str
-    twitter_url: str
-    email: str
+    github_url: Optional[str] = None
+    linkedin_url: Optional[str] = None
+    twitter_url: Optional[str] = None
+    email: Optional[str] = None
 
 
 class StatSchema(BaseSchema):
     id: int
-    value: str
-    label: str
-    sub_label: str
-    icon: str
-    theme: str
+    value: Optional[str] = None
+    label: Optional[str] = None
+    sub_label: Optional[str] = None
+    icon: Optional[str] = None
+    theme: Optional[str] = None
 
 
 class ServiceSchema(BaseSchema):
     id: int
-    title: str
-    description: str
-    icon: str
+    title: Optional[str] = None
+    description: Optional[str] = None
+    icon: Optional[str] = None
 
 
 class ExperienceSchema(BaseSchema):
     id: int
-    role: str
-    company: str
-    start_date: date
-    end_date: Optional[date]
-    is_current: bool
-    descriptions: List[str]
-    tags: List[str]
+    role: Optional[str] = None
+    company: Optional[str] = None
+    start_date: Optional[date] = None
+    end_date: Optional[date] = None
+    is_current: Optional[bool] = None
+    descriptions: List[str] = []
+    tags: List[str] = []
 
 
 class EducationSchema(BaseSchema):
     id: int
-    degree: str
-    school: str
-    start_year: int
-    end_year: int
-    details: str
+    degree: Optional[str] = None
+    school: Optional[str] = None
+    start_year: Optional[int] = None
+    end_year: Optional[int] = None
+    details: Optional[str] = None
 
 
 class ProjectSchema(BaseSchema):
     id: int
-    title: str
-    description: str
-    image_url: str
-    category: str
-    demo_url: Optional[str]
-    github_url: Optional[str]
-    tags: List[str]
+    title: Optional[str] = None
+    description: Optional[str] = None
+    image_url: Optional[str] = None
+    category: Optional[str] = None
+    demo_url: Optional[str] = None
+    github_url: Optional[str] = None
+    tags: List[str] = []
 
 
 class SkillSchema(BaseSchema):
     id: int
-    name: str
-    proficiency: int
+    name: Optional[str] = None
+    proficiency: Optional[int] = None
 
 
 class SkillCategorySchema(BaseSchema):
     id: int
-    category_name: str
-    skills: List[SkillSchema]
+    category_name: Optional[str] = None
+    skills: List[SkillSchema] = []
 
 
 class BlogSchema(BaseSchema):
     id: int
-    title: str
-    excerpt: str
-    published_date: date
-    read_time_minutes: int
-    slug: str
-    url: str
+    title: Optional[str] = None
+    excerpt: Optional[str] = None
+    published_date: Optional[date] = None
+    read_time_minutes: Optional[int] = None
+    slug: Optional[str] = None
+    url: Optional[str] = None
 
 
 class CertificationSchema(BaseSchema):
     id: int
-    title: str
-    issuer: str
-    credential_id: str
-    verify_url: str
+    title: Optional[str] = None
+    issuer: Optional[str] = None
+    credential_id: Optional[str] = None
+    verify_url: Optional[str] = None
 
 
 class MetaSchema(BaseSchema):
-    created_at: datetime
-    updated_at: datetime
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
 
 
 class PortfolioSchema(BaseSchema):
     id: int
-    personal_info: PersonalInfoSchema
-    social_links: SocialLinkSchema
-    stats: List[StatSchema]
-    services: List[ServiceSchema]
-    experiences: List[ExperienceSchema]
-    education: List[EducationSchema]
-    projects: List[ProjectSchema]
-    skill_categories: List[SkillCategorySchema]
-    blogs: List[BlogSchema]
-    certifications: List[CertificationSchema]
-    meta: MetaSchema
+    personal_info: Optional[PersonalInfoSchema] = None
+    social_links: Optional[SocialLinkSchema] = None
+    stats: List[StatSchema] = []
+    services: List[ServiceSchema] = []
+    experiences: List[ExperienceSchema] = []
+    education: List[EducationSchema] = []
+    projects: List[ProjectSchema] = []
+    skill_categories: List[SkillCategorySchema] = []
+    blogs: List[BlogSchema] = []
+    certifications: List[CertificationSchema] = []
+    meta: Optional[MetaSchema] = None

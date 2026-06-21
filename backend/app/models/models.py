@@ -2,10 +2,9 @@ from typing import Optional
 import datetime
 
 from sqlalchemy import Date, DateTime, ForeignKeyConstraint, Identity, Index, Integer, PrimaryKeyConstraint, String
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from app.db.database import Base
 
-class Base(DeclarativeBase):
-    pass
 
 
 class Portfolios(Base):
