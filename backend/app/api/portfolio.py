@@ -22,7 +22,7 @@ from app.models.models import (
 router = APIRouter( tags=["Portfolio"])
 
 
-@router.get("/",response_model=PortfolioSchema)
+@router.get("/",response_model=list[PortfolioSchema])
 def get_portfolio(db: Session = Depends(get_db)):
     portfolio = db.query(Portfolio).first()
 
@@ -122,7 +122,7 @@ def get_portfolio(db: Session = Depends(get_db)):
             ]
         })
 
-    return {
+    return [{
         "id": portfolio.id,
 
         "personal_info": {
@@ -214,4 +214,4 @@ def get_portfolio(db: Session = Depends(get_db)):
             "created_at": portfolio.created_at,
             "updated_at": portfolio.updated_at
         }
-    }
+    }]
